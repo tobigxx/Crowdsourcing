@@ -20,4 +20,5 @@ from cmpUI import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('test', views.img_test, name="test"),
+    path('phase1/', views.phase1, name="phase1")
 ]
