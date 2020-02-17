@@ -14,3 +14,6 @@ def img_test(request):
     # random select given dataset name, object name
     imgurl = ImageModel.objects.filter(img__startswith=KEYRING).order_by("?").first()
     return render(request, 'test.html', {'imgurl': imgurl.img.url, 'datasetName': dataset, 'ObjectName': settings.OBJECT_NAME_PLURAL})
+
+def phase1(request):
+	pass
