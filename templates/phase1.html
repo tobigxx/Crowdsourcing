@@ -2,41 +2,40 @@
 {% load static %}
 
 {% block content %}
-	<div class="container" style="padding-top: 10px; overflow: auto; padding-right: 0px; padding-left: 0px;">
-      <div class="row" style="padding-bottom: 10px">
+<div class="container" style="padding-top: 10px; overflow: auto; padding-right: 0px; padding-left: 0px;">
+	<div class="row pt-1">
 
-        <div class="col-md-4" id="bg-image">
-          <!-- IMAGE -->
-          {% for url in img_probes %}
-          <div class="row mt-3">
-            <div class="col text-center" style="height: 35%;">
-              <a data-toggle="modal" data-target="#img-model-1">
-                <img src="{{ url }}" id="img{{ forloop.counter }}" class="d-inline-block img-fluid " style="cursor: zoom-in; height: 170px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2)">
-              </a>
-            </div>
-          </div>
-          {% endfor %}
+		<div class="col-md-4" id="bg-image">
+			<!-- IMAGE -->
+			{% for url in img_probes %}
+			<div class="row mt-2">
+				<div class="col text-center" style="height: 35%;">
+					<a data-toggle="modal" data-target="#img-model-1">
+						<img src="{{ url }}" class="shadow" id="img{{ forloop.counter }}" class="d-inline-block img-fluid " style="width: 60%">
+					</a>
+				</div>
+			</div>
+			{% endfor %}
 
-        <!-- END IMAGE -->
-        </div>
+			<!-- END IMAGE -->
+		</div>
 
-        <div class="col-md-8" id="bg-image">
-          <div class="container d-flex align-items-center min-vh-100">
-            <!--<div class="col text-center" style="height: 35%;">-->
-              {% for url in img_user %}
-              <div class="row">
-                <img src="{{ url }}" id="img-{{ forloop.counter }}" class="d-inline-block img-fluid " style="cursor: zoom-in; height: 170px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2)">
-              </div>
-                {% if forloop.counter == 3 %}
-                  </div><div class="row">
-                {% endif %}
-              {% endfor %}
-            </div>
-          <!--</div>-->
-        </div>
+		<div class="col-md-8 align-self-center" id="bg-image">
+				<div class="row">
+				{% for url in img_user %}
+				<div class="col">
+					<img src="{{ url }}" style="width:90%">
+				</div>
+				{% if forloop.counter == 3 %}
+				</div>
+				<div class="row" style="padding-top:100px">
+				{% endif %}
+				{% endfor %}
+				</div>
+		</div>
 
-      </div>
+	</div>
 
-  </div>
+</div>
 
 {% endblock %}
