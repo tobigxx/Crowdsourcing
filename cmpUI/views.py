@@ -16,4 +16,4 @@ def img_test(request):
     return render(request, 'test.html', {'imgurl': imgurl.img.url, 'datasetName': dataset, 'ObjectName': settings.OBJECT_NAME_PLURAL})
 
 def phase1(request):
-	pass
+	return render(request, 'phase1.html')
