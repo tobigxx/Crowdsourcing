@@ -16,4 +16,6 @@ def img_test(request):
     return render(request, 'test.html', {'imgurl': imgurl.img.url, 'datasetName': dataset, 'ObjectName': settings.OBJECT_NAME_PLURAL})
 
 def phase1(request):
-	return render(request, 'phase1.html')
+	img_probes = ['/static/img/65.jpg', '/static/img/71.jpg', '/static/img/86.jpg', '/static/img/92.jpg']
+	img_user = ['/static/img/947.jpg', '/static/img/946.jpg', '/static/img/877.jpg', '/static/img/853.jpg', '/static/img/838.jpg', '/static/img/820.jpg']
+	return render(request, 'phase1.html', {'img_probes': img_probes, 'img_user': img_user})
