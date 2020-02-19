@@ -114,7 +114,7 @@ MIDDLEWARE = [
 ]
 
 # Ask Xiao what is this
-if os.environ['ENABLE_LIVERELOAD']:
+if os.environ.get('ENABLE_LIVERELOAD') == 'true':
     # INSTALLED_APPS.insert(0, "'livereload',") # has to be before staticfiles
     INSTALLED_APPS.append("livereload")
     MIDDLEWARE.append("'livereload.middleware.LiveReloadScript',")
