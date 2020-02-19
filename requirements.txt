@@ -8,7 +8,6 @@ django-livereload-server==0.3.2
 django-storages==1.9.1
 docutils==0.15.2
 jmespath==0.9.4
-livereload==2.6.1
 natsort==7.0.1
 Pillow==7.0.0
 psycopg2-binary==2.8.4
