@@ -97,6 +97,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'livereload',
     'django.contrib.staticfiles',
     'storages',
     'cmpUI.apps.CmpuiConfig',
@@ -111,12 +112,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'livereload.middleware.LiveReloadScript',
 ]
-
-# Ask Xiao what this is
-if os.environ.get('ENABLE_LIVERELOAD') == 'true':
-    INSTALLED_APPS.append("'livereload',")
-    MIDDLEWARE.append("'livereload.middleware.LiveReloadScript',")
 
 ROOT_URLCONF = 'cdsimgs2t.urls'
 
@@ -141,14 +138,6 @@ WSGI_APPLICATION = 'cdsimgs2t.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
