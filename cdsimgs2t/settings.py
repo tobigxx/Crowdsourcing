@@ -113,10 +113,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# Ask Xiao what is this
+# Ask Xiao what this is
 if os.environ.get('ENABLE_LIVERELOAD') == 'true':
-    # INSTALLED_APPS.insert(0, "'livereload',") # has to be before staticfiles
-    INSTALLED_APPS.append("livereload")
+    INSTALLED_APPS.append("'livereload',")
     MIDDLEWARE.append("'livereload.middleware.LiveReloadScript',")
 
 ROOT_URLCONF = 'cdsimgs2t.urls'
